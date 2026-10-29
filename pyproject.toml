@@ -1,0 +1,34 @@
+[project]
+name = "code-review-agent"
+version = "0.1.0"
+description = "LangGraph ReAct agent that reviews GitHub pull requests for bugs, security issues and test gaps"
+readme = "README.md"
+authors = [
+    { name = "Swaroop Nashikkar", email = "snashikkar@colorcon.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-anthropic>=1.7.7",
+    "langchain-core>=1.7.1",
+    "langchain-openai>=1.7.3",
+    "langgraph>=1.2.18",
+    "pydantic>=2.14.2",
+    "pygithub>=2.10.0",
+    "python-dotenv>=1.2.4",
+    "truststore>=0.10.5",
+]
+
+[project.scripts]
+code-review-agent = "code_review_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["tests"]
