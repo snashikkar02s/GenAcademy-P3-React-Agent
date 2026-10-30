@@ -65,7 +65,7 @@ uv sync
 cp .env.example .env      # then fill in GITHUB_TOKEN and one of GROQ_API_KEY / OPENAI_API_KEY / ANTHROPIC_API_KEY
 ```
 
-The GitHub token needs read and write access to pull requests on the target repo. The default model is Groq `llama-3.3-70b-versatile`. Use `--provider openai` for `gpt-4o-mini`, or `--provider anthropic` for Claude Opus 5.5 (`claude-opus-5-5`, through `langchain-anthropic`'s `ChatAnthropic`, at effort `LLM_EFFORT`, default `high`). Override the model with `LLM_MODEL` or `--model`. The tool loads the OS certificate store through `truststore`, so it works behind corporate TLS inspection.
+The GitHub token needs read and write access to pull requests on the target repo. The default model is Groq `openai/gpt-oss-120b`. Use `--provider openai` for `gpt-4o-mini`, or `--provider anthropic` for Claude Opus 5.5 (`claude-opus-5-5`, through `langchain-anthropic`'s `ChatAnthropic`, at effort `LLM_EFFORT`, default `high`). Override the model with `LLM_MODEL` or `--model`. The tool loads the OS certificate store through `truststore`, so it works behind corporate TLS inspection.
 
 ## Usage
 
